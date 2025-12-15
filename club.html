@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Club Dashboard</title>
+  <style>
+    body { font-family: Arial; background:#f4f4f4; }
+    .card {
+      background:white;
+      margin:20px;
+      padding:15px;
+      border-radius:10px;
+    }
+    table {
+      width:100%;
+      border-collapse: collapse;
+    }
+    td, th {
+      border:1px solid #ccc;
+      padding:8px;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="padding:20px">Club Dashboard</h2>
+
+<div class="card">
+  <h3>Your Event</h3>
+  <p>Total Bookings: 2</p>
+</div>
+
+<div class="card">
+  <h3>Student Bookings</h3>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Admission</th>
+      <th>Phone</th>
+      <th>Payment</th>
+    </tr>
+    <tr>
+      <td>Aman</td>
+      <td>21CS001</td>
+      <td>9999999999</td>
+      <td>Paid</td>
+    </tr>
+    <tr>
+      <td>Riya</td>
+      <td>21CS002</td>
+      <td>8888888888</td>
+      <td>Paid</td>
+    </tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>Upload College News</h3>
+  <input placeholder="News title"><br><br>
+  <button onclick="alert('News Uploaded (Demo)')">Upload</button>
+</div>
+
+</body>
+</html>
