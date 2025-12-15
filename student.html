@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Dashboard</title>
+  <style>
+    body { font-family: Arial; background:#f4f4f4; }
+    nav {
+      background:#e50914;
+      color:white;
+      padding:15px;
+      display:flex;
+      justify-content:space-between;
+    }
+    .event {
+      background:white;
+      margin:20px;
+      padding:15px;
+      border-radius:10px;
+    }
+    button {
+      background:#e50914;
+      color:white;
+      border:none;
+      padding:8px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h3>Events Feed</h3>
+  <button onclick="showNews()">College News</button>
+</nav>
+
+<div class="event">
+  <h3>Hackathon</h3>
+  <p>By Coding Club</p>
+  <button onclick="book()">Book Event</button>
+</div>
+
+<script>
+  function book() {
+    alert("Booking Successful (Demo)");
+  }
+  function showNews() {
+    alert("College news displayed here");
+  }
+</script>
+
+</body>
+</html>
