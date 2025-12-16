@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book Event</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(135deg,#ff416c,#ff4b2b);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.form-box{
+  background:white;
+  width:350px;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+input, select{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  background:#ff4b2b;
+  color:white;
+  border:none;
+  border-radius:20px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.9;
+}
+
+.event-name{
+  text-align:center;
+  font-weight:bold;
+  margin-bottom:10px;
+  color:#ff4b2b;
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-box">
+  <h2>Event Booking</h2>
+  <div class="event-name" id="eventTitle"></div>
+
+  <input type="text" placeholder="Admission Number" id="admission" required>
+  <input type="tel" placeholder="Phone Number" id="phone" required>
+
+  <select id="year">
+    <option value="">Select Year</option>
+    <option>1st Year</option>
+    <option>2nd Year</option>
+    <option>3rd Year</option>
+    <option>4th Year</option>
+  </select>
+
+  <input type="text" placeholder="Branch (CSE, ECE, ME...)" id="branch">
+  <input type="text" placeholder="UPI ID (example@upi)" id="upi">
+
+  <button onclick="submitBooking()">Confirm Booking</button>
+</div>
+
+<script>
+document.getElementById("eventTitle").innerText =
+  localStorage.getItem("selectedEvent");
+
+function submitBooking(){
+  const admission = document.getElementById("admission").value;
+  const phone = document.getElementById("phone").value;
+  const year = document.getElementById("year").value;
+  const branch = document.getElementById("branch").value;
+  const upi = document.getElementById("upi").value;
+
+  if(!admission || !phone || !year || !branch || !upi){
+    alert("Please fill all details");
+    return;
+  }
+
+  alert("Booking Successful!\nPayment via UPI: " + upi);
+
+  window.location.href = "student.html";
+}
+</script>
+
+</body>
+</html>
