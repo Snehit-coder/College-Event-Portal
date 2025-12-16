@@ -51,7 +51,8 @@ button{
 
 <nav>
   <h3>Events Feed</h3>
-  <button onclick="showNews()">College News</button>
+  <button onclick="goToBooking('Hackathon')">Book</button>
+
 </nav>
 
 <div class="container" id="feed">
@@ -95,6 +96,13 @@ function showNews(){
   alert("College news will be shown here");
 }
 </script>
+<script>
+function goToBooking(eventName){
+  localStorage.setItem("selectedEvent", eventName);
+  window.location.href = "book.html";
+}
+</script>
+
 
 </body>
 </html>
