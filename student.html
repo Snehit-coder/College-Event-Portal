@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Student Dashboard</title>
-  <style>
-    body { font-family: Arial; background:#f4f4f4; }
-    nav {
-      background:#e50914;
-      color:white;
-      padding:15px;
-      display:flex;
-      justify-content:space-between;
-    }
-    .event {
-      background:white;
-      margin:20px;
-      padding:15px;
-      border-radius:10px;
-    }
-    button {
-      background:#e50914;
-      color:white;
-      border:none;
-      padding:8px;
-      cursor:pointer;
-    }
-  </style>
+<title>Student Dashboard</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#f4f4f4;}
+nav{
+  background:#ff4b2b;
+  color:white;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.container{padding:20px;}
+
+.event{
+  background:white;
+  margin-bottom:20px;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.event img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.event-content{padding:15px;}
+
+.actions{
+  display:flex;
+  justify-content:space-between;
+}
+
+button{
+  background:#ff4b2b;
+  border:none;
+  color:white;
+  padding:8px 15px;
+  border-radius:20px;
+  cursor:pointer;
+}
+</style>
 </head>
+
 <body>
 
 <nav>
@@ -33,20 +54,48 @@
   <button onclick="showNews()">College News</button>
 </nav>
 
-<div class="event">
-  <h3>Hackathon</h3>
-  <p>By Coding Club</p>
-  <button onclick="book()">Book Event</button>
+<div class="container" id="feed">
+
+  <div class="event">
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+    <div class="event-content">
+      <h3>Hackathon</h3>
+      <p>Organised by Coding Club</p>
+      <div class="actions">
+        <button onclick="like(this)">❤️ Like</button>
+        <button onclick="book()">Book</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="event">
+    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
+    <div class="event-content">
+      <h3>Cultural Fest</h3>
+      <p>Organised by Cultural Club</p>
+      <div class="actions">
+        <button onclick="like(this)">❤️ Like</button>
+        <button onclick="book()">Book</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script>
-  function book() {
-    alert("Booking Successful (Demo)");
-  }
-  function showNews() {
-    alert("College news displayed here");
-  }
+function book(){
+  alert("Booking successful (demo)");
+}
+
+function like(btn){
+  btn.innerText="❤️ Liked";
+}
+
+function showNews(){
+  alert("College news will be shown here");
+}
 </script>
 
 </body>
 </html>
+
