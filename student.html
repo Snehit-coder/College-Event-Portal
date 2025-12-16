@@ -1,19 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Student Dashboard</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#f4f4f4;}
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f4f4f4;
+}
+
 nav{
   background:#ff4b2b;
   color:white;
   padding:15px;
   display:flex;
   justify-content:space-between;
+  align-items:center;
 }
 
-.container{padding:20px;}
+nav button{
+  background:white;
+  color:#ff4b2b;
+  border:none;
+  padding:8px 15px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.container{
+  padding:20px;
+}
 
 .event{
   background:white;
@@ -29,14 +47,17 @@ nav{
   object-fit:cover;
 }
 
-.event-content{padding:15px;}
+.event-content{
+  padding:15px;
+}
 
 .actions{
   display:flex;
   justify-content:space-between;
+  margin-top:10px;
 }
 
-button{
+.actions button{
   background:#ff4b2b;
   border:none;
   color:white;
@@ -51,34 +72,33 @@ button{
 
 <nav>
   <h3>Events Feed</h3>
-  <button onclick="goToBooking('Hackathon')">Book</button>
-
+  <button onclick="showNews()">College News</button>
 </nav>
 
-<div class="container" id="feed">
+<div class="container">
 
+  <!-- EVENT 1 -->
   <div class="event">
     <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
     <div class="event-content">
       <h3>Hackathon</h3>
       <p>Organised by Coding Club</p>
       <div class="actions">
-        <button onclick="like(this)">❤️ Like</button>
-        <button onclick="goToBooking('Hackathon')">Book</button>
-
+        <button onclick="likeEvent(this)">❤️ Like</button>
+        <button onclick="bookEvent('Hackathon')">Book</button>
       </div>
     </div>
   </div>
 
+  <!-- EVENT 2 -->
   <div class="event">
     <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2">
     <div class="event-content">
       <h3>Cultural Fest</h3>
       <p>Organised by Cultural Club</p>
       <div class="actions">
-        <button onclick="like(this)">❤️ Like</button>
-        <button onclick="goToBooking('Hackathon')">Book</button>
-
+        <button onclick="likeEvent(this)">❤️ Like</button>
+        <button onclick="bookEvent('Cultural Fest')">Book</button>
       </div>
     </div>
   </div>
@@ -86,27 +106,25 @@ button{
 </div>
 
 <script>
-function book(){
-  alert("Booking successful (demo)");
+function bookEvent(eventName){
+  // store event name
+  localStorage.setItem("selectedEvent", eventName);
+
+  // redirect to booking page
+  window.location.href = "book.html";
 }
 
-function like(btn){
-  btn.innerText="❤️ Liked";
+function likeEvent(btn){
+  btn.innerText = "❤️ Liked";
 }
 
 function showNews(){
-  alert("College news will be shown here");
+  alert("College news section (demo)");
 }
 </script>
-<script>
-function goToBooking(eventName){
-  localStorage.setItem("selectedEvent", eventName);
-  window.location.href = "book.html";
-}
-</script>
-
 
 </body>
 </html>
+
 
 
